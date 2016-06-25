@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">GraphGuide</string>
+    <string name="caculate_route_distance">计算路线距离</string>
+    <string name="input_your_route">输入您要查询的路线: </string>
+    <string name="step_limit_solution_title">限制站点数问题</string>
+    <string name="step_limit_solution_description">输入你想查询的路线的起始点和终点，以及您期望此间经过的最大站点数，我们会为您计算出所有可能的路线</string>
+    <string name="step_fix_solution_description">输入你想查询的路线的起始点和终点，以及您期望此间经过的站点数，我们会为您计算出所有可能的路线</string>
+    <string name="fixt_step_num">经过站点数：</string>
+    <string name="fix_step_solution_title">固定站点数问题</string>
+    <string name="trips_with_stops_from">The number of trips starting at</string>
+    <string name="start_stop">起点：</string>
+    <string name="end_stop">终点：</string>
+    <string name="max_step_num">最多经过的站点数：</string>
+    <string name="shortest_distance_solution">最短路径问题</string>
+    <string name="shortest_distance_description">输入您想查询路线的起始点和终点，我们会为您计算出最短的一条路径</string>
+    <string name="trips_with_stops_end">and ending at </string>
+    <string name="trips_with_tops_stops_max"> with a maximum of </string>
+    <string name="trips_with_tops_stops_exactly"> with exactly </string>
+
+    <string name="stops">stops</string>
+
+    <string name="length_of_shotest_routes_from">The length of the shortest route from </string>
+    <string name="to">to </string>
+
+    <string name="different_routes_from">The number of different routes from </string>
+    <string name="less_than"> with a distance of less than </string>
+
+    <string name="submit">提交</string>
+
+    <string name="invalid_input">Please input valid params!</string>
+</resources>

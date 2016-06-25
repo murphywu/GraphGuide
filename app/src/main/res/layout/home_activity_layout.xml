@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+        <!-- distance of two town -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/caculate_route_distance_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/caculate_route_distance"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:singleLine="true"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/caculate_distance_route_input_notice"
+                android:layout_below="@id/caculate_route_distance_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:textSize="15dp"
+                android:singleLine="true"
+                android:textColor="@color/light_dark"
+                android:text="@string/input_your_route"
+                android:layout_marginRight="5dp"/>
+
+            <EditText
+                android:id="@+id/route_input_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/caculate_distance_route_input_notice"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/caculate_distance_route_input_notice"/>
+
+            <Button
+                android:id="@+id/distance_submit_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:layout_below="@id/route_input_edit"
+                android:text="@string/submit" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/orange"/>
+
+        <!-- trips with max num -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/step_limit_route_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:text="@string/step_limit_solution_title"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/step_limit_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/step_limit_route_title"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/light_dark"
+                android:text="@string/step_limit_solution_description"/>
+
+            <TextView
+                android:id="@+id/limit_start_stop_input_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/step_limit_description"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:text="@string/start_stop" />
+
+            <EditText
+                android:id="@+id/limit_step_start_stop_edit"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/limit_start_stop_input_notice"
+                android:maxLength="1"
+                android:textSize="15dp"
+                android:layout_alignBaseline="@id/limit_start_stop_input_notice"/>
+
+            <TextView
+                android:id="@+id/limit_end_stop_input_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/limit_step_start_stop_edit"
+                android:layout_below="@id/step_limit_description"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:singleLine="true"
+                android:layout_marginRight="5dp"
+                android:text="@string/end_stop" />
+
+            <EditText
+                android:id="@+id/limit_step_end_stop_edit"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:maxLength="1"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/limit_end_stop_input_notice"
+                android:layout_alignBaseline="@id/limit_end_stop_input_notice"/>
+
+            <TextView
+                android:id="@+id/limit_max_step_num_input_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:layout_below="@id/limit_start_stop_input_notice"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/max_step_num" />
+
+            <EditText
+                android:id="@+id/limit_max_step_num_input_edit"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:numeric="decimal"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/limit_max_step_num_input_notice"
+                android:layout_alignBaseline="@id/limit_max_step_num_input_notice"/>
+
+            <Button
+                android:id="@+id/limit_step_solution_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/limit_max_step_num_input_notice"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:textSize="15dp"
+                android:text="@string/submit" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/orange"/>
+
+        <!-- trips with fix num -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/step_fixt_route_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:text="@string/fix_step_solution_title"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/step_fixt_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/step_fixt_route_title"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/light_dark"
+                android:text="@string/step_fix_solution_description"/>
+
+            <TextView
+                android:id="@+id/fixt_start_stop_input_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/step_fixt_description"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:text="@string/start_stop" />
+
+            <EditText
+                android:id="@+id/fixt_step_start_stop_edit"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/fixt_start_stop_input_notice"
+                android:maxLength="1"
+                android:textSize="15dp"
+                android:layout_alignBaseline="@id/fixt_start_stop_input_notice"/>
+
+            <TextView
+                android:id="@+id/fixt_end_stop_input_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/fixt_step_start_stop_edit"
+                android:layout_below="@id/step_fixt_description"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:singleLine="true"
+                android:layout_marginRight="5dp"
+                android:text="@string/end_stop" />
+
+            <EditText
+                android:id="@+id/fixt_step_end_stop_edit"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:maxLength="1"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/fixt_end_stop_input_notice"
+                android:layout_alignBaseline="@id/fixt_end_stop_input_notice"/>
+
+            <TextView
+                android:id="@+id/fix_max_step_num_input_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:singleLine="true"
+                android:layout_below="@id/fixt_start_stop_input_notice"
+                android:layout_alignParentLeft="true"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:layout_marginRight="5dp"
+                android:text="@string/fixt_step_num" />
+
+            <EditText
+                android:id="@+id/fixt_max_step_num_input_edit"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:numeric="decimal"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/fix_max_step_num_input_notice"
+                android:layout_alignBaseline="@id/fix_max_step_num_input_notice"/>
+
+            <Button
+                android:id="@+id/fixt_step_solution_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fix_max_step_num_input_notice"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:textSize="15dp"
+                android:text="@string/submit" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/orange"/>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/short_distance_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:singleLine="true"
+                android:textColor="@color/black"
+                android:text="@string/shortest_distance_solution"
+                android:layout_marginBottom="5dp"/>
+
+            <TextView
+                android:id="@+id/shortest_distance_descrition"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/short_distance_title"
+                android:textSize="15dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/light_dark"
+                android:text="@string/shortest_distance_description"/>
+
+            <TextView
+                android:id="@+id/shortest_distance_start_input_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@id/shortest_distance_descrition"
+                android:layout_marginRight="5dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:text="@string/start_stop" />
+
+            <EditText
+                android:id="@+id/short_distance_start_edit"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/shortest_distance_start_input_notice"
+                android:maxLength="1"
+                android:textSize="15dp"
+                android:layout_alignBaseline="@id/shortest_distance_start_input_notice"/>
+
+            <TextView
+                android:id="@+id/shortest_distance_stop_input_notice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/short_distance_start_edit"
+                android:layout_below="@id/shortest_distance_descrition"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:singleLine="true"
+                android:layout_marginRight="5dp"
+                android:text="@string/end_stop" />
+
+            <EditText
+                android:id="@+id/short_distance_end_edit"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:maxLength="1"
+                android:textSize="15dp"
+                android:layout_toRightOf="@id/shortest_distance_stop_input_notice"
+                android:layout_alignBaseline="@id/shortest_distance_stop_input_notice"/>
+
+
+            <Button
+                android:id="@+id/short_distance_submit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/shortest_distance_start_input_notice"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="10dp"
+                android:textSize="15dp"
+                android:text="@string/submit" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
